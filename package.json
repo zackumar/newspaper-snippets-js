@@ -1,0 +1,27 @@
+{
+    "name": "newspaper-snippets-js",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start:dev": "nodemon",
+        "build": "rimraf ./build && tsc",
+        "start": "npm run build && node build/index.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "opencv4nodejs": "^5.6.0"
+    },
+    "devDependencies": {
+        "@types/node": "^15.6.0",
+        "node-gyp": "^8.0.0",
+        "node-pre-gyp": "^0.17.0",
+        "nodemon": "^2.0.7",
+        "opencv-build": "^0.1.9",
+        "rimraf": "^3.0.2",
+        "ts-node": "^9.1.1",
+        "typescript": "^4.2.4"
+    }
+}
