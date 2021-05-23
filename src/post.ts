@@ -20,7 +20,7 @@ export async function postTwitter(credentials: any, filename: string, caption: s
     client.post('media/upload', { media: fs.readFileSync(filename) }, (err, media, response) => {
         if (err) {
             console.error(err)
-            return
+            return false
         }
         var status = {
             status: caption,
@@ -28,7 +28,12 @@ export async function postTwitter(credentials: any, filename: string, caption: s
         }
 
         client.post('statuses/update', status, (err, tweet, response) => {
-            if (err) console.error(err)
+            if (err) {
+                console.error(err)
+                return false
+            }
         })
     })
+
+    return true
 }
