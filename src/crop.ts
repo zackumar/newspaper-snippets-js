@@ -1,7 +1,7 @@
-import cv, { Mat, Point2, Size } from 'opencv4nodejs'
+import cv, { Mat, Point2, Rect, Size } from 'opencv4nodejs'
 
-export async function findBoxes(image: Mat) {
-    let boxList: BoundingBox[] = []
+export function findBoxes(image: Mat) {
+    let boxList: Rect[] = []
     let gray = image.bgrToGray()
 
     let threshInv = gray.threshold(127, 255, cv.THRESH_BINARY_INV)
@@ -28,12 +28,7 @@ export async function findBoxes(image: Mat) {
         let bb = contour.boundingRect()
         if (bb.width > 500 && bb.height > 500) {
             if (bb.width < 2000 && bb.height < 2000) {
-                boxList.push({
-                    x: bb.x,
-                    y: bb.y,
-                    w: bb.width,
-                    h: bb.height,
-                })
+                boxList.push(new Rect(bb.x, bb.y, bb.width, bb.height))
             }
         }
     })
@@ -41,9 +36,35 @@ export async function findBoxes(image: Mat) {
     return boxList
 }
 
-type BoundingBox = {
-    x: number
-    y: number
-    w: number
-    h: number
+export function crop(image: Mat, boundingBox: Rect) {
+    let centerX = boundingBox.x + Math.floor(boundingBox.width / 2)
+    let centerY = boundingBox.y + Math.floor(boundingBox.height / 2)
+
+    let x1 = centerX - Math.floor(1080 / 2)
+    let y1 = centerY - Math.floor(1080 / 2)
+    let x2 = centerX + Math.floor(1080 / 2)
+    let y2 = centerY + Math.floor(1080 / 2)
+
+    if (x1 < 0) {
+        x2 += -x1
+        x1 += -x1
+    }
+
+    if (y1 < 0) {
+        y2 += -y1
+        y1 += -y1
+    }
+
+    if (y2 > image.rows) {
+        y1 -= y2 - image.rows
+        y2 -= y2 - image.rows
+    }
+
+    if (x2 > image.cols) {
+        x1 -= x2 - image.cols
+        x2 -= x2 - image.cols
+    }
+
+    let croppedImg = image.getRegion(new Rect(x1, y1, x2 - x1, y2 - y1))
+    return croppedImg
 }
