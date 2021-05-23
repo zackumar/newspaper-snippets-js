@@ -12,6 +12,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "axios": "^0.21.1",
         "opencv4nodejs": "^5.6.0"
     },
     "devDependencies": {
