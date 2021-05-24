@@ -2,7 +2,8 @@ import cv, { Mat, Point2, Rect, Size } from 'opencv4nodejs'
 
 export function findBoxes(image: Mat) {
     let boxList: Rect[] = []
-    let gray = image.bgrToGray()
+    // let gray = image.cvtColor(cv.COLOR_BGR2GRAY)
+    let gray = image
 
     let threshInv = gray.threshold(127, 255, cv.THRESH_BINARY_INV)
 

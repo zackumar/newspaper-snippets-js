@@ -63,7 +63,7 @@ export async function downloadJP2(): Promise<Paper> {
     }
 }
 
-type Paper = {
+export type Paper = {
     image: Mat
     instagramCaption: string
     twitterCaption: string
