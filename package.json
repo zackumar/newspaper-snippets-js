@@ -23,7 +23,6 @@
         "node-gyp": "^8.0.0",
         "node-pre-gyp": "^0.17.0",
         "nodemon": "^2.0.7",
-        "opencv-build": "^0.1.9",
         "rimraf": "^3.0.2",
         "ts-node": "^9.1.1",
         "typescript": "^4.2.4"
