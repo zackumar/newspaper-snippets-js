@@ -1,7 +1,5 @@
 import axios from 'axios'
-import cv, { Mat } from 'opencv4nodejs'
-import fs from 'fs'
-import { privateEncrypt } from 'crypto'
+import cv, { Mat } from 'opencv4nodejs-prebuilt'
 
 var intros = [
     'Newspaper snippets',
