@@ -1,4 +1,4 @@
-import cv, { Mat, Point2, Rect, Size } from 'opencv4nodejs'
+import cv, { Mat, Point2, Rect, Size } from 'opencv4nodejs-prebuilt'
 
 export function findBoxes(image: Mat) {
     let boxList: Rect[] = []

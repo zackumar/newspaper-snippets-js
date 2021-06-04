@@ -1,6 +1,6 @@
 import fs from 'fs'
 
-import cv from 'opencv4nodejs'
+import cv from 'opencv4nodejs-prebuilt'
 
 import * as news from './newspaper'
 import * as crop from './crop'

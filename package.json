@@ -14,7 +14,7 @@
     "dependencies": {
         "axios": "^0.21.1",
         "instagram-private-api": "^1.45.1",
-        "opencv4nodejs": "^5.6.0",
+        "opencv4nodejs-prebuilt": "^5.3.1",
         "twitter": "^1.7.1"
     },
     "devDependencies": {
