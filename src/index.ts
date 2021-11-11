@@ -5,6 +5,9 @@ import cv from 'opencv4nodejs-prebuilt'
 import * as news from './newspaper'
 import * as crop from './crop'
 import * as post from './post'
+
+import './config'
+
 ;(async () => {
     let instagramCredentials = {
         username: process.env.INSTAGRAM_USERNAME,
