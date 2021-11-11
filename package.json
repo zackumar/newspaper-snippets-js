@@ -12,19 +12,20 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "axios": "^0.21.1",
-        "instagram-private-api": "^1.45.1",
-        "opencv4nodejs-prebuilt": "^5.3.1",
+        "axios": "^0.24.0",
+        "instagram-private-api": "^1.45.2",
+        "natural": "^5.1.11",
+        "opencv4nodejs-prebuilt": "^5.3.4",
         "twitter": "^1.7.1"
     },
     "devDependencies": {
-        "@types/node": "^15.6.0",
-        "@types/twitter": "^1.7.0",
-        "node-gyp": "^8.0.0",
+        "@types/node": "^16.11.7",
+        "@types/twitter": "^1.7.1",
+        "node-gyp": "^8.4.0",
         "node-pre-gyp": "^0.17.0",
-        "nodemon": "^2.0.7",
+        "nodemon": "^2.0.15",
         "rimraf": "^3.0.2",
-        "ts-node": "^9.1.1",
-        "typescript": "^4.2.4"
+        "ts-node": "^10.4.0",
+        "typescript": "^4.4.4"
     }
 }
